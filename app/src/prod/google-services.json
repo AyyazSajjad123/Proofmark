@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "48829311538",
+    "project_id": "proofmark-10ce4",
+    "storage_bucket": "proofmark-10ce4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:48829311538:android:db779e3a41b3a539626a2b",
+        "android_client_info": {
+          "package_name": "com.example.proofmark"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0aMp-oVUTWs0Vx7GuPBxg7ioAaL2pqZo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
