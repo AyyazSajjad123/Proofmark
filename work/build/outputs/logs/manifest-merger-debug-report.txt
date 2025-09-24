@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\work\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest5079532199074686564.xml:2:13-83
-INJECTED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\work\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest5079532199074686564.xml:2:13-83
+ADDED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\work\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest12614290231462744870.xml:2:13-83
+INJECTED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\work\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest12614290231462744870.xml:2:13-83
 	package
-		INJECTED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\work\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest5079532199074686564.xml
+		INJECTED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\work\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest12614290231462744870.xml
 	xmlns:android
-		ADDED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\work\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest5079532199074686564.xml:2:23-81
+		ADDED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\work\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest12614290231462744870.xml:2:23-81
 uses-sdk
-INJECTED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\work\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest5079532199074686564.xml reason: use-sdk injection requested
-INJECTED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\work\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest5079532199074686564.xml
-INJECTED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\work\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest5079532199074686564.xml
+INJECTED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\work\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest12614290231462744870.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\work\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest12614290231462744870.xml
+INJECTED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\work\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest12614290231462744870.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\work\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest5079532199074686564.xml
+		INJECTED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\work\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest12614290231462744870.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\work\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest5079532199074686564.xml
+		INJECTED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\work\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest12614290231462744870.xml
