@@ -1,11 +1,10 @@
 package com.example.proofmark.feature.settings
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -22,106 +21,126 @@ fun AppSettingsScreen(
     settingsViewModel: SettingsViewModel = viewModel()
 ) {
     val prefs by settingsViewModel.state.collectAsState()
+    val listState = rememberLazyListState()
 
-    Column(
-        modifier = Modifier.fillMaxSize().padding(16.dp)
+    LazyColumn(
+        state = listState,
+        modifier = Modifier.fillMaxSize(),
+        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 16.dp),
+        verticalArrangement = Arrangement.spacedBy(20.dp)
     ) {
-        Text(text = stringResource(R.string.settings), style = MaterialTheme.typography.headlineMedium)
-        Spacer(Modifier.height(16.dp))
+        // Title
+        item {
+            Text(
+                text = stringResource(R.string.settings),
+                style = MaterialTheme.typography.headlineMedium
+            )
+        }
 
         // Language
-        Text(stringResource(R.string.language), style = MaterialTheme.typography.titleLarge)
-        Spacer(Modifier.height(8.dp))
-        Row {
-            Chip(
-                selected = prefs.language == "en",
-                onClick = { settingsViewModel.setLanguage("en") },
-                label = stringResource(R.string.english)
-            )
-            Spacer(Modifier.width(12.dp))     // <-- FIXED (.dp)
-            Chip(
-                selected = prefs.language == "ur",
-                onClick = { settingsViewModel.setLanguage("ur") },
-                label = stringResource(R.string.urdu)
-            )
+        item {
+            SectionTitle(stringResource(R.string.language))
+            Spacer(Modifier.height(8.dp))
+            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                Chip(
+                    selected = prefs.language == "en",
+                    onClick = { settingsViewModel.setLanguage("en") },
+                    label = stringResource(R.string.english)
+                )
+                Chip(
+                    selected = prefs.language == "ur",
+                    onClick = { settingsViewModel.setLanguage("ur") },
+                    label = stringResource(R.string.urdu)
+                )
+            }
         }
-
-        Spacer(Modifier.height(20.dp))
 
         // Quality
-        Text(stringResource(R.string.quality), style = MaterialTheme.typography.titleLarge)
-        Spacer(Modifier.height(8.dp))
-        Row {
-            listOf("LOW","MED","HIGH").forEachIndexed { i, q ->
-                if (i > 0) Spacer(Modifier.width(12.dp))
-                Chip(
-                    selected = prefs.quality == q,
-                    onClick = { settingsViewModel.setQuality(q) },
-                    label = q
-                )
+        item {
+            SectionTitle(stringResource(R.string.quality))
+            Spacer(Modifier.height(8.dp))
+            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                listOf("LOW","MED","HIGH").forEach { q ->
+                    Chip(
+                        selected = prefs.quality == q,
+                        onClick = { settingsViewModel.setQuality(q) },
+                        label = q
+                    )
+                }
             }
         }
-
-        Spacer(Modifier.height(20.dp))
 
         // Max MP
-        Text(stringResource(R.string.max_mp), style = MaterialTheme.typography.titleLarge)
-        Spacer(Modifier.height(8.dp))
-        Row {
-            listOf(8,12,16).forEachIndexed { i, mp ->
-                if (i > 0) Spacer(Modifier.width(12.dp))
+        item {
+            SectionTitle(stringResource(R.string.max_mp))
+            Spacer(Modifier.height(8.dp))
+            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                listOf(8,12,16).forEach { mp ->
+                    Chip(
+                        selected = prefs.maxMp == mp,
+                        onClick = { settingsViewModel.setMaxMp(mp) },
+                        label = "$mp"
+                    )
+                }
+            }
+        }
+
+        // Watermark
+        item {
+            SectionTitle(stringResource(R.string.watermark))
+            Spacer(Modifier.height(8.dp))
+            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 Chip(
-                    selected = prefs.maxMp == mp,
-                    onClick = { settingsViewModel.setMaxMp(mp) },
-                    label = "$mp"
+                    selected = prefs.watermark,
+                    onClick = { settingsViewModel.setWatermark(true) },
+                    label = stringResource(R.string.on)
+                )
+                Chip(
+                    selected = !prefs.watermark,
+                    onClick = { settingsViewModel.setWatermark(false) },
+                    label = stringResource(R.string.off)
                 )
             }
         }
 
-        Spacer(Modifier.height(20.dp))
-
-        // Watermark
-        Text(stringResource(R.string.watermark), style = MaterialTheme.typography.titleLarge)
-        Spacer(Modifier.height(8.dp))
-        Row {
-            Chip(
-                selected = prefs.watermark,
-                onClick = { settingsViewModel.setWatermark(true) },
-                label = stringResource(R.string.on)
-            )
-            Spacer(Modifier.width(12.dp))
-            Chip(
-                selected = !prefs.watermark,
-                onClick = { settingsViewModel.setWatermark(false) },
-                label = stringResource(R.string.off)
-            )
-        }
-
-        Spacer(Modifier.height(20.dp))
-
         // Flash
-        Text(stringResource(R.string.flash), style = MaterialTheme.typography.titleLarge)
-        Spacer(Modifier.height(8.dp))
-        Row {
-            listOf("AUTO","OFF","ON").forEachIndexed { i, f ->
-                if (i > 0) Spacer(Modifier.width(12.dp))
-                Chip(
-                    selected = prefs.flash == f,
-                    onClick = { settingsViewModel.setFlash(f) },
-                    label = when (f) {
+        item {
+            SectionTitle(stringResource(R.string.flash))
+            Spacer(Modifier.height(8.dp))
+            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                listOf("AUTO","OFF","ON").forEach { f ->
+                    val label = when (f) {
                         "AUTO" -> stringResource(R.string.auto)
                         "OFF"  -> stringResource(R.string.off)
                         else   -> stringResource(R.string.on)
                     }
-                )
+                    Chip(
+                        selected = prefs.flash == f,
+                        onClick = { settingsViewModel.setFlash(f) },
+                        label = label
+                    )
+                }
             }
         }
 
-        Spacer(Modifier.height(24.dp))
-        TextButton(onClick = { navController.navigate("privacy") }) {
-            Text(stringResource(R.string.privacy_policy))
+        // --- Spacer so last button keyboard/nav se clip na ho
+        item { Spacer(Modifier.height(12.dp)) }
+
+        // Privacy Policy button (always visible; scroll karke mil jayega)
+        item {
+            TextButton(onClick = { navController.navigate("privacy") }) {
+                Text(text = stringResource(R.string.privacy_policy))
+            }
         }
+
+        // Bottom safe space
+        item { Spacer(Modifier.height(48.dp)) }
     }
+}
+
+@Composable
+private fun SectionTitle(text: String) {
+    Text(text, style = MaterialTheme.typography.titleLarge)
 }
 
 @Composable
@@ -129,8 +148,10 @@ private fun Chip(selected: Boolean, onClick: () -> Unit, label: String) {
     OutlinedButton(
         onClick = onClick,
         colors = ButtonDefaults.outlinedButtonColors(
-            containerColor = if (selected) MaterialTheme.colorScheme.secondaryContainer
-            else MaterialTheme.colorScheme.surface
+            containerColor = if (selected)
+                MaterialTheme.colorScheme.secondaryContainer
+            else
+                MaterialTheme.colorScheme.surface
         )
     ) { Text(label) }
 }
