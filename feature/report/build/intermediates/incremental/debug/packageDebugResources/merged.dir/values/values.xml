@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="report_build_zip">Build ZIP</string>
+    <string name="report_desc">Generate an A4 PDF report and/or a ZIP containing image + manifest.</string>
+    <string name="report_generate_pdf">Generate PDF</string>
+    <string name="report_latest_image">Latest image: %1$s</string>
+    <string name="report_manifest">Manifest: %1$s</string>
+    <string name="report_no_manifest">Manifest not found</string>
+    <string name="report_no_proof">No recent proof found</string>
+    <string name="report_pdf">PDF: %1$s</string>
+    <string name="report_pdf_generated">PDF generated: %1$s</string>
+    <string name="report_share_pdf">Share PDF</string>
+    <string name="report_share_zip">Share ZIP</string>
+    <string name="report_title">Report</string>
+    <string name="report_zip">ZIP: %1$s</string>
+</resources>

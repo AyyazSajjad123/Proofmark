@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="report_build_zip">زیپ بنائیں</string>
+    <string name="report_desc">A4 پی ڈی ایف رپورٹ بنائیں اور/یا تصویر + مینفسٹ کے ساتھ ZIP تیار کریں۔</string>
+    <string name="report_generate_pdf">پی ڈی ایف بنائیں</string>
+    <string name="report_latest_image">تازہ تصویر: %1$s</string>
+    <string name="report_manifest">مینفسٹ: %1$s</string>
+    <string name="report_no_manifest">مینفسٹ نہیں ملا</string>
+    <string name="report_no_proof">کوئی تازہ ثبوت نہیں ملا</string>
+    <string name="report_pdf">پی ڈی ایف: %1$s</string>
+    <string name="report_pdf_generated">پی ڈی ایف بن گئی: %1$s</string>
+    <string name="report_share_pdf">پی ڈی ایف شیئر کریں</string>
+    <string name="report_share_zip">زیپ شیئر کریں</string>
+    <string name="report_title">رپورٹ</string>
+    <string name="report_zip">زیپ: %1$s</string>
+</resources>

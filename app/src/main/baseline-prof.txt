@@ -1,0 +1,10 @@
+HSPLcom/example/proofmark/MainActivity;->onCreate
+HSPLandroidx/startup/InitializationProvider;->onCreate
+HSPLdagger/hilt/android/internal/managers/ViewComponentManager$FragmentContextWrapper;->getSystemService
+HSPLandroidx/profileinstaller/ProfileInstallerInitializer;->create
+HSPLkotlinx/coroutines/Dispatchers;->getMain
+HSPLandroidx/compose/runtime/ComposerImpl;->startRoot
+HSPLandroidx/compose/runtime/Recomposer;->runRecomposeAndApplyChanges
+HSPLandroidx/compose/ui/platform/CompositionLocalsKt;->CompositionLocalProvider
+HSPLandroidx/navigation/compose/NavHost;->invoke
+HSPLandroidx/activity/compose/ComponentActivityKt;->setContent

@@ -1,9 +1,8 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\core\crypto\src\main\AndroidManifest.xml:2:1-57
-INJECTED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\core\crypto\src\main\AndroidManifest.xml:2:1-57
+ADDED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\core\crypto\src\main\AndroidManifest.xml:1:1-13
+INJECTED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\core\crypto\src\main\AndroidManifest.xml:1:1-13
 	package
-		ADDED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\core\crypto\src\main\AndroidManifest.xml:2:11-54
 		INJECTED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\core\crypto\src\main\AndroidManifest.xml
 uses-sdk
 INJECTED from C:\Users\Ayyaz\AndroidStudioProjects\ProofMark\core\crypto\src\main\AndroidManifest.xml reason: use-sdk injection requested

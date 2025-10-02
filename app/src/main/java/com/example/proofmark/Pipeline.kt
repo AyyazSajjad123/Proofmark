@@ -2,7 +2,6 @@ package com.example.proofmark.work
 
 import android.content.Context
 import androidx.work.*
-import com.example.proofmark.work.workers.*
 import java.util.UUID
 import java.util.concurrent.TimeUnit
 
@@ -10,14 +9,7 @@ import java.util.concurrent.TimeUnit
  * Central place for all WorkManager keys used across the pipeline.
  * Keeping here avoids "unresolved Keys" issues everywhere.
  */
-object Keys {
-    const val INPUT_PATH  = "input_path"
-    const val OUTPUT_PATH = "output_path"
-    const val PROOF_ID    = "proof_id"
-    const val SHA256      = "sha256"
-    const val MAX_MP      = "max_mp"
-    const val QUALITY     = "quality"     // "MED" | "HIGH"
-}
+
 
 /**
  * A tiny orchestrator: builds & enqueues the Day-5 chain.

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App & Nav -->
+    <string name="app_name">ProofMark</string>
+    <string name="capture">کیپچر</string>
+    <string name="library">لائبریری</string>
+    <string name="verify">تصدیق</string>
+    <string name="report">رپورٹ</string>
+    <string name="settings">ترتیبات</string>
+
+    <!-- Settings -->
+    <string name="language">زبان</string>
+    <string name="english">انگریزی</string>
+    <string name="urdu">اردو</string>
+    <string name="quality">معیار</string>
+    <string name="max_mp">زیادہ سے زیادہ ایم پی</string>
+    <string name="watermark">واٹر مارک</string>
+    <string name="flash">فلیش</string>
+    <string name="on">آن</string>
+    <string name="off">آف</string>
+    <string name="auto">خودکار</string>
+    <string name="privacy_policy">رازداری کی پالیسی</string>
+
+    <!-- Privacy screen (Day-20) -->
+    <string name="privacy_title">رازداری کی پالیسی</string>
+    <string name="privacy_placeholder">یہ عارضی متن ہے۔ اپنی اصل پالیسی شامل کریں یا ویب ویو کھولیں۔</string>
+</resources>

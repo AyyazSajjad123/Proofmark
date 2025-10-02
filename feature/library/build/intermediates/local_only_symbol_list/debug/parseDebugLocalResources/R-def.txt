@@ -1,2 +1,6 @@
 R_DEF: Internal format may change without notice
 local
+string share_cancel
+string share_continue
+string share_warn_body
+string share_warn_title

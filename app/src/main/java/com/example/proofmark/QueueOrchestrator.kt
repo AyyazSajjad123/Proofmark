@@ -1,58 +1,41 @@
 package com.example.proofmark.work
 
-import androidx.work.BackoffPolicy
-import androidx.work.Data
-import androidx.work.ExistingWorkPolicy
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.WorkManager
-import com.example.proofmark.work.workers.*
-import java.util.concurrent.TimeUnit
+import android.content.Context
+import androidx.work.*
 
 object QueueOrchestrator {
 
     fun enqueue(
-        workManager: WorkManager,
+        wm: WorkManager,
         proofId: String,
         inputPath: String,
         maxMP: Int = 12,
         quality: String = "MED"
     ) {
-        // use Data.Builder (avoids Pair<String, Any?> inference issues)
-        val base: Data = Data.Builder()
-            .putString(Keys.PROOF_ID, proofId)
-            .putString(Keys.INPUT_PATH, inputPath)
-            .build()
+        val base = workDataOf(
+            Keys.PROOF_ID to proofId,
+            Keys.INPUT to inputPath,
+            Keys.MAX_MP to maxMP,
+            Keys.QUALITY to quality
+        )
 
         val normalize = OneTimeWorkRequestBuilder<NormalizeWorker>()
             .setInputData(base)
+            .setConstraints(constraintsDefault())
+            .addTag("proof")
+            .addTag(workNameFor(proofId))
             .build()
 
-        val overlay = OneTimeWorkRequestBuilder<OverlayWorker>().build()
+        val overlay   = OneTimeWorkRequestBuilder<OverlayWorker>().build()
+        val downscale = OneTimeWorkRequestBuilder<DownscaleWorker>().build()
+        val compress  = OneTimeWorkRequestBuilder<CompressWorker>().build()
+        val save      = OneTimeWorkRequestBuilder<SaveWorker>().build()
+        val hash      = OneTimeWorkRequestBuilder<HashWorker>().build()
+        val manifest  = OneTimeWorkRequestBuilder<ManifestWorker>().build()
+        val mark      = OneTimeWorkRequestBuilder<MarkStatusWorker>().build()
 
-        val downscaleInput = Data.Builder()
-            .putInt("maxMP", maxMP)
-            .build()
-        val downscale = OneTimeWorkRequestBuilder<DownscaleWorker>()
-            .setInputData(downscaleInput)
-            .build()
-
-        val compressInput = Data.Builder()
-            .putString("quality", quality)
-            .build()
-        val compress = OneTimeWorkRequestBuilder<CompressWorker>()
-            .setInputData(compressInput)
-            .build()
-
-        val save = OneTimeWorkRequestBuilder<SaveWorker>().build()
-        val hash = OneTimeWorkRequestBuilder<HashWorker>().build()
-        val manifest = OneTimeWorkRequestBuilder<ManifestWorker>().build()
-
-        val mark = OneTimeWorkRequestBuilder<MarkStatusWorker>()
-            .setBackoffCriteria(BackoffPolicy.EXPONENTIAL, 10, TimeUnit.SECONDS)
-            .build()
-
-        workManager
-            .beginUniqueWork("proof-$proofId", ExistingWorkPolicy.REPLACE, normalize)
+        wm.enqueueUniqueWork(workNameFor(proofId), ExistingWorkPolicy.REPLACE, normalize)
+        wm.beginUniqueWork(workNameFor(proofId), ExistingWorkPolicy.APPEND, normalize)
             .then(overlay)
             .then(downscale)
             .then(compress)
@@ -61,5 +44,13 @@ object QueueOrchestrator {
             .then(manifest)
             .then(mark)
             .enqueue()
+    }
+
+    fun retryWithInput(wm: WorkManager, proofId: String, inputPath: String) =
+        enqueue(wm, proofId, inputPath)
+
+    fun drainOnAppStart(context: Context) {
+        // keeps WorkManager DB tidy; safe to call on startup
+        WorkManager.getInstance(context).pruneWork()
     }
 }

@@ -1,0 +1,11 @@
+<resources>
+    <string name="verify_title">تصدیق</string>
+    <string name="verify_desc">ہیش یا میٹا ڈیٹا کی تصدیق کے لیے ثبوت منتخب کریں۔</string>
+    <string name="verify_pick">فائل منتخب کریں</string>
+    <string name="verify_latest">تازہ ترین کی تصدیق</string>
+    <string name="verify_latest_label">تازہ: %1$s</string>
+    <string name="verify_sha">SHA-256:</string>
+    <string name="verify_copy">کاپی</string>
+    <string name="verify_copied">کاپی ہو گیا</string>
+    <string name="verify_empty">کوئی ثبوت نہیں ملا۔ پہلے کیپچر کریں۔</string>
+</resources>

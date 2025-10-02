@@ -1,1 +1,10 @@
 com.example.proofmark.feature.verify
+string verify_copied
+string verify_copy
+string verify_desc
+string verify_empty
+string verify_latest
+string verify_latest_label
+string verify_pick
+string verify_sha
+string verify_title

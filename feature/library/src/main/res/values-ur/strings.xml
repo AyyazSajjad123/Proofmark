@@ -1,0 +1,6 @@
+<resources>
+    <string name="share_warn_title">تصویر شیئر کریں؟</string>
+    <string name="share_warn_body">JPG شیئر کرنے سے میٹا ڈیٹا (وقت/مقام) شامل ہو سکتا ہے۔ جاری رکھیں؟</string>
+    <string name="share_continue">جاری رکھیں</string>
+    <string name="share_cancel">منسوخ</string>
+</resources>

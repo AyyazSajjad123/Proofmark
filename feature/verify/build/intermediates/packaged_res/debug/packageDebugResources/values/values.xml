@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="verify_copied">Copied to clipboard</string>
+    <string name="verify_copy">Copy</string>
+    <string name="verify_desc">Pick a proof to verify its hash or metadata.</string>
+    <string name="verify_empty">No proof found. Capture first.</string>
+    <string name="verify_latest">Verify Latest</string>
+    <string name="verify_latest_label">Latest: %1$s</string>
+    <string name="verify_pick">Pick File</string>
+    <string name="verify_sha">SHA-256:</string>
+    <string name="verify_title">Verify</string>
+</resources>

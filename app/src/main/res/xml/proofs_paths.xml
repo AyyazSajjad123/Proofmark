@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- catch-all external files -->
+    <external-files-path name="external_root" path="."/>
+    <!-- specific subfolders -->
+    <external-files-path name="proofs"  path="proofs/"/>
+    <external-files-path name="reports" path="reports/"/>
+    <external-files-path name="exports" path="exports/"/>
+    <!-- optional internal files -->
+    <files-path name="internal_root" path="."/>
+</paths>

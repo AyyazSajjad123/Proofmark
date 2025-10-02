@@ -1,2 +1,15 @@
 R_DEF: Internal format may change without notice
 local
+string report_build_zip
+string report_desc
+string report_generate_pdf
+string report_latest_image
+string report_manifest
+string report_no_manifest
+string report_no_proof
+string report_pdf
+string report_pdf_generated
+string report_share_pdf
+string report_share_zip
+string report_title
+string report_zip
